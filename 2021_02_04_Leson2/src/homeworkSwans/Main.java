@@ -10,7 +10,8 @@ public class Main {
 
         Swan[] arr = new Swan[]{swen, tim, tina, dog, don};
         Swan.printSwanArr(arr);
-        AgeSort.ageSort(arr);
+//        AgeSort.ageSort(arr);
+        AgeSort.cocktailSort(arr);
         Swan.printSwanArr(arr);
     }
 }
