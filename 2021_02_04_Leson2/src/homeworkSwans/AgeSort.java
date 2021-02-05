@@ -16,7 +16,7 @@ public class AgeSort {
         }
     }
 
-    static void cocktailSort(Swan[] array) {
+    static void cocktailAgeSort(Swan[] array) {
         int start = 0;
         int end = array.length - 1;
         while (start <= end) {
