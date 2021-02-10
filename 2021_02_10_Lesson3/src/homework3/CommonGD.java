@@ -1,11 +1,9 @@
 package homework3;
 
-public class CommonMD {
+public class CommonGD {
     public static void main(String[] args) {
-//        Find the highest common divider and Least common multiple
+//        Find the highest common divider
 //        НОД — это наибольший общий делитель. Greatest common divisor
-//        НОК — это наименьшее общее кратное. Least common multiple
-//        Метод принимает два числа. И надо найти нод. Второй метод принимает два числа и находит НОК
 
         System.out.println(findGreatestCommonDivisor(1000, 10));//10
         System.out.println(findGreatestCommonDivisor(6, 9));//3
