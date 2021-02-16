@@ -49,6 +49,7 @@ public class StartApp {
 
     public static void printShelf(Shelf shelf) {
         for (int i = 0; i < shelf.size; i++) {
+            System.out.println("Book #" + i + 1 + ":");
             shelf.books[i].toDisplay();
         }
     }
