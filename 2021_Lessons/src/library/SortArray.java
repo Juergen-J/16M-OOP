@@ -1,29 +1,6 @@
-package lesson5;
+package library;
 
-public class CocktailSort {
-    public static void main(String[] args) {
-        int[] array = createArr(10);
-        printArr(array);
-        cocktailSort(array);
-        printArr(array);
-
-    }
-
-    public static void printArr(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + ",");
-        }
-        System.out.println();
-    }
-
-    public static int[] createArr(int size) {
-        int[] output = new int[size];
-        for (int i = 0; i < output.length; i++) {
-            output[i] = (int) (Math.random() * 100);
-        }
-        return output;
-    }
-
+public class SortArray {
     public static void cocktailSort(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
@@ -52,6 +29,24 @@ public class CocktailSort {
                 break;
             }
         }
+    }
 
+    public static int[] unSortArray(int[] arr) {
+        int[] randomArr = new int[arr.length];
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int temp = generateRandomIndex(arr.length);
+            while (randomArr[temp] != 0) {
+                temp = generateRandomIndex(arr.length);
+                count++;
+            }
+            randomArr[temp] = arr[i];
+        }
+//        System.out.println(count);
+        return randomArr;
+    }
+
+    public static int generateRandomIndex(int max) {
+        return (int) (Math.random() * max);
     }
 }
