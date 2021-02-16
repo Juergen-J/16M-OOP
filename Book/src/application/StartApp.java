@@ -31,9 +31,7 @@ public class StartApp {
         int count = 0;
         for (int i = 0; i < shelf.size - 1; i++) {
             if (shelf.books[i].price > shelf.books[i + 1].price) {
-                Book temp = shelf.books[i];
-                shelf.books[i] = shelf.books[i + 1];
-                shelf.books[i + 1] = temp;
+                replacement(shelf, i);
                 count++;
             }
         }
@@ -41,6 +39,12 @@ public class StartApp {
             bookSort(shelf);
         }
 
+    }
+
+    public static void replacement(Shelf shelf, int i) {
+        Book temp = shelf.books[i];
+        shelf.books[i] = shelf.books[i + 1];
+        shelf.books[i + 1] = temp;
     }
 
     public static void printShelf(Shelf shelf) {
