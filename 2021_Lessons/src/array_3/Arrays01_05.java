@@ -1,6 +1,6 @@
 package array_3;
 
-public class Arrays01_03 {
+public class Arrays01_05 {
     public static void main(String[] args) {
         System.out.println("*******************#1");
         System.out.println(countEvens(new int[]{2, 1, 2, 3, 4}));//3
@@ -16,6 +16,17 @@ public class Arrays01_03 {
         System.out.println(lucky13(new int[]{0, 2, 4}));//true
         System.out.println(lucky13(new int[]{1, 2, 3}));//false
         System.out.println(lucky13(new int[]{1, 2, 4}));//false
+
+        System.out.println("*******************#4");
+        fizzArray(4);// → [0, 1, 2, 3]
+        fizzArray(1);// → [0]
+        fizzArray(10);// → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        System.out.println("*******************#5");
+        System.out.println(no14(new int[]{1, 2, 3}));//true
+        System.out.println(no14(new int[]{1, 2, 3, 4}));//false
+        System.out.println(no14(new int[]{2, 3, 4}));//true
+
 
     }
 
@@ -50,5 +61,27 @@ public class Arrays01_03 {
             }
         }
         return true;
+    }
+
+    public static int[] fizzArray(int size) {
+        int[] arr = new int[size];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i;
+        }
+        return arr;
+    }
+
+    public static boolean no14(int[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 1) {
+                count++;
+            }
+            if (arr[i] == 4) {
+                count++;
+            }
+        }
+        return count < 2 ? true : false;
+
     }
 }
