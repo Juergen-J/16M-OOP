@@ -22,7 +22,8 @@ public class StartApp {
         shelf01.deleteBook(book05);
 //        shelf01.books[0].toDisplay();
 //        printShelf(shelf01);
-        bookSort(shelf01);
+//        bookSort(shelf01);
+        cocktailSort(shelf01);
         printShelf(shelf01);
     }
 
@@ -30,7 +31,7 @@ public class StartApp {
     public static void bookSort(Shelf shelf) {        //nach dem Preis
         int count = 0;
         for (int i = 0; i < shelf.size - 1; i++) {
-            if (shelf.books[i].price > shelf.books[i + 1].price) {
+            if (shelf.books[i].getPrice() > shelf.books[i + 1].getPrice()) {
                 replacement(shelf, i);
                 count++;
             }
@@ -39,6 +40,33 @@ public class StartApp {
             bookSort(shelf);
         }
 
+    }
+
+    private static void cocktailSort(Shelf shelf) {
+        int start = 0;
+        int end = shelf.size - 1;
+        while (start <= end) {
+            boolean swapped = false;
+            for (int j = start; j < end; j++) {
+                if (shelf.books[j].getPrice() > shelf.books[j + 1].getPrice()) {
+                    replacement(shelf, j);
+                    swapped = true;
+                }
+            }
+            end--;
+            for (int k = end; k > start; k--) {
+                if (shelf.books[k].getPrice() < shelf.books[k - 1].getPrice()) {
+                    Book temp = shelf.books[k - 1];
+                    shelf.books[k - 1] = shelf.books[k];
+                    shelf.books[k] = temp;
+                    swapped = true;
+                }
+            }
+            start++;
+            if (!swapped) {
+                break;
+            }
+        }
     }
 
     public static void replacement(Shelf shelf, int i) {
