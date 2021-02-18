@@ -22,6 +22,9 @@ public class Homework06 {
         sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 2);// → true
         sameEnds(new int[]{5, 6, 45, 99, 13, 5, 6}, 3);// → false
         sameEnds(new int[]{1, 6, 45, 99, 13, 5, 1}, 1);// → true
+
+        System.out.println("+++++++++++++++++5");
+        numberTriangle();
     }
 
 
@@ -72,5 +75,19 @@ public class Homework06 {
         }
 //        System.out.println(count);
         return count == quantity ? true : false;
+    }
+
+    public static void numberTriangle() {
+        int temp = 0;
+        for (int i = 1; i <= 6; i++) {
+            for (int k = 0; k < 13 - i; k++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < i + temp; j++) {
+                System.out.print(i);
+            }
+            temp++;
+            System.out.println();
+        }
     }
 }
