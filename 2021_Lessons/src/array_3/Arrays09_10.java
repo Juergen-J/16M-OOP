@@ -2,7 +2,7 @@ package array_3;
 
 import java.util.Arrays;
 
-public class Arrays09_ {
+public class Arrays09_10 {
     public static void main(String[] args) {
         System.out.println("***********#9");
         shiftLeft(new int[]{6, 2, 5, 3});// → [2, 5, 3, 6]
