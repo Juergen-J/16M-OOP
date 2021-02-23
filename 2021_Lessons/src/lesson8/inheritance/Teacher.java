@@ -6,9 +6,9 @@ public class Teacher extends Person {
     public Teacher() {
     }
 
-    public Teacher(String firstName, String secondName, String uniId) {
-        super(firstName, secondName, uniId);
-        setSalary(500_000);
+    public Teacher(String firstName, String secondName, int age, String uniId, double salary) {
+        super(firstName, secondName, age, uniId);
+        this.salary = salary;
     }
 
     void teaches() {
@@ -27,6 +27,6 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher:" + super.toString();
+        return "Teacher:" + super.toString() + "\n Salary: " + salary;
     }
 }

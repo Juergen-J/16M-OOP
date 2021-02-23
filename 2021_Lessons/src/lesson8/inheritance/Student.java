@@ -2,13 +2,22 @@ package lesson8.inheritance;
 
 public class Student extends Person {
     private double rating;
+    private boolean universityPaid = false;
 
     public Student() {
     }
 
-    public Student(String firstName, String secondName, String uniId) {
-        super(firstName, secondName, uniId);
+    public Student(String firstName, String secondName, int age, String uniId) {
+        super(firstName, secondName, age, uniId);
         this.rating = 10;
+    }
+
+    public boolean isUniversityPaid() {
+        return universityPaid;
+    }
+
+    public void setUniversityPaid(boolean universityPaid) {
+        this.universityPaid = universityPaid;
     }
 
     void study() {
@@ -23,7 +32,8 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student: \n" + super.toString() +
-                "\n Rating: " + rating;
+        return "Student:" + super.toString() +
+                "\n Rating: " + rating
+                + "\n Paid university:" + universityPaid;
     }
 }
