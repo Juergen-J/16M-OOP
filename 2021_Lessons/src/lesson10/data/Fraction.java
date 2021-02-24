@@ -11,7 +11,7 @@ public class Fraction {
 
     public Fraction(int numerator) {
         this.numerator = numerator;
-        denominator=1;
+        denominator = 1;
     }
 
     public int getNumerator() {
