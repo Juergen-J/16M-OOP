@@ -6,7 +6,7 @@ public class TestPet {
         Pet cat = new Cat("Murzik", 1, "zebra");
 
 
-        System.out.println(grjan.toString());
-        System.out.println(cat.toString());
+        System.out.println(grjan);
+        System.out.println(cat);
     }
 }
