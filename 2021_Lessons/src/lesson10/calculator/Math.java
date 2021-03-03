@@ -3,6 +3,8 @@ package lesson10.calculator;
 import lesson10.data.Fraction;
 
 public class Math {
+
+
     public static Fraction addition(Fraction a, Fraction b) {
         int aNumerator;
         int bNumerator;
