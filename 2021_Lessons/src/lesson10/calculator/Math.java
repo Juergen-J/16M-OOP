@@ -3,7 +3,11 @@ package lesson10.calculator;
 import lesson10.data.Fraction;
 
 public class Math {
-
+    public static void reduce(Fraction n) {
+        int temp = gcdRecursionAlgorithm(n.getNumerator(), n.getDenominator());
+        n.setNumerator(n.getNumerator() / temp);
+        n.setDenominator(n.getDenominator() / temp);
+    }
 
     public static Fraction addition(Fraction a, Fraction b) {
         int aNumerator;
@@ -13,8 +17,9 @@ public class Math {
         denominator = leastCommonMultiple(a.getDenominator(), b.getDenominator());
         aNumerator = a.getNumerator() * (denominator / a.getDenominator());
         bNumerator = b.getNumerator() * (denominator / b.getDenominator());
-
-        return new Fraction(aNumerator + bNumerator, denominator);
+        Fraction result = new Fraction(aNumerator + bNumerator, denominator);
+        reduce(result);
+        return result;
     }
 
     public static Fraction subtract(Fraction a, Fraction b) {
@@ -26,16 +31,21 @@ public class Math {
         aNumerator = a.getNumerator() * (denominator / a.getDenominator());
         bNumerator = b.getNumerator() * (denominator / b.getDenominator());
 
-        return new Fraction(aNumerator - bNumerator, denominator);
+        Fraction result = new Fraction(aNumerator - bNumerator, denominator);
+        reduce(result);
+        return result;
     }
 
     public static Fraction multiplication(Fraction a, Fraction b) {
-        return new Fraction(a.getNumerator() * b.getNumerator(), a.getDenominator() * b.getDenominator());
+        Fraction result = new Fraction(a.getNumerator() * b.getNumerator(), a.getDenominator() * b.getDenominator());
+        reduce(result);
+        return result;
     }
 
     public static Fraction division(Fraction a, Fraction b) {
-        return new Fraction(a.getNumerator() * b.getDenominator(), a.getDenominator() * b.getNumerator());
-
+        Fraction result = new Fraction(a.getNumerator() * b.getDenominator(), a.getDenominator() * b.getNumerator());
+        reduce(result);
+        return result;
     }
 
     private static int gcdRecursionAlgorithm(int a, int b) {

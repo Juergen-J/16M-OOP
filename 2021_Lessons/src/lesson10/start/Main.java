@@ -12,6 +12,8 @@ public class Main {
         Fraction multiplicationResult = Math.multiplication(myFirstFraction, myLastFraction);
         Fraction divisionResult = Math.division(myFirstFraction, myLastFraction);
 
-        System.out.println(additionResult);
+        System.out.println();
+
+
     }
 }
