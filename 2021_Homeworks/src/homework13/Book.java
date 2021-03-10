@@ -16,10 +16,7 @@ public class Book {
     }
 
     public Book(long isbn, String author, String title, int countPages, double pricePerPage) {
-        if (isISBNRight(isbn))
-            this.isbn = isbn;
-        else
-            this.isbn = 0;
+        setIsbn(isbn);
 
         if (author == null || author.trim().isEmpty())
             this.author = "No author";
@@ -30,18 +27,23 @@ public class Book {
         else
             this.title = title;
 
-        if (countPages > 0)
+        if (countPages > 0 && countPages < 10000)
             this.countPages = countPages;
-        else
-            this.countPages = 0;
-        if (pricePerPage > 0)
+
+        if (pricePerPage > 0 && pricePerPage < 10)
             this.pricePerPage = pricePerPage;
-        else
-            this.pricePerPage = 0;
+
     }
 
     public long getIsbn() {
         return isbn;
+    }
+
+    public void setIsbn(long isbn) {
+        if (isISBNRight(isbn))
+            this.isbn = isbn;
+        else
+            System.out.println("Wrong isbn");
     }
 
     public String getAuthor() {
@@ -62,7 +64,6 @@ public class Book {
     public void setTitle(String title) {
         if (title == null || author.trim().isEmpty()) {
             System.out.println("Wrong enter!");
-            this.title = "No title";
         } else {
             this.title = title;
         }
@@ -73,11 +74,10 @@ public class Book {
     }
 
     public void setCountPages(int countPages) {
-        if (countPages > 0)
+        if (countPages > 0 && countPages < 10000)
             this.countPages = countPages;
         else {
             System.out.println("Wrong enter!");
-            this.countPages = 0;
         }
 
     }
@@ -87,11 +87,10 @@ public class Book {
     }
 
     public void setPricePerPage(double pricePerPage) {
-        if (pricePerPage > 0) {
+        if (pricePerPage > 0 && pricePerPage < 10) {
             this.pricePerPage = pricePerPage;
         } else {
             System.out.println("Wrong enter");
-            this.pricePerPage = 0;
         }
     }
 
