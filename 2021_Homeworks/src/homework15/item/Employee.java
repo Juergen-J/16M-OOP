@@ -1,7 +1,8 @@
-package homework14.item;
+package homework15.item;
 
-public class Employee extends Person {
-    public double calcSalary;
+import java.util.Objects;
+
+public abstract class Employee extends Person {
     String company;
     double baseSAlary;
 
@@ -40,4 +41,15 @@ public class Employee extends Person {
                 ", age=" + age +
                 '}';
     }
+
+    public abstract double calcSalary();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return Double.compare(employee.baseSAlary, baseSAlary) == 0 && Objects.equals(company, employee.company);
+    }
+
 }

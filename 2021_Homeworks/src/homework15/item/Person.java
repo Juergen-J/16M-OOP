@@ -1,8 +1,8 @@
-package homework14.item;
+package homework15.item;
 
 import java.util.Objects;
 
-public class Person {
+public abstract class Person {
     String name;
     long id;
     int age;
@@ -48,14 +48,4 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Person)) return false;
-        Person person = (Person) o;
-        return id == person.id && age == person.age && name.equals(person.name);
-    }
-
-
 }
