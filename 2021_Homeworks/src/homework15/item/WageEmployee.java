@@ -47,7 +47,7 @@ public class WageEmployee extends Employee {
     @Override
     public double calcSalary() {
         return hours * wage;
-         }
+    }
 
     @Override
     public boolean equals(Object o) {

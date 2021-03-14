@@ -27,7 +27,7 @@ public class EmployeesAppl {
                 new WageEmployee("Wage-Employee3", 756772, 40, "Company", 0.0, 40, 12.50);
 
         Employee[] emps = new Employee[]{manager01, manager02, manager03, salesMan01, salesMan02, salesMan03, wageEmployee01, wageEmployee02, wageEmployee03};
-//        printAllEmployees(emps);
+        printAllEmployees(emps);
 
         getSumSalaryAllEmployees(emps);
 
@@ -63,8 +63,8 @@ public class EmployeesAppl {
     private static double getСompanyRevenue(Employee[] emps) {
         double revenue = 0.0;
         for (Employee e : emps) {
-            if (e.equals((Employee) SalesMan)) {
-                revenue += 0;
+            if (e instanceof SalesMan) {
+                revenue += ((SalesMan) e).getTotalSales();
             }
         }
         return revenue;
