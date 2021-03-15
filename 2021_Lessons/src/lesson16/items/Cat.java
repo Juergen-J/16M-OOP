@@ -2,8 +2,6 @@ package lesson16.items;
 
 import lesson16.interfaces.IMewable;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
 
 public class Cat extends Animals implements IMewable {
     String name;

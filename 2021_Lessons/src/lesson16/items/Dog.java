@@ -5,8 +5,9 @@ import lesson16.interfaces.IBarkable;
 public class Dog extends Animals implements IBarkable {
     String nickName;
 
-    public Dog(String kind, String subspecies) {
+    public Dog(String kind, String subspecies, String nickName) {
         super(kind, subspecies);
+        this.nickName = nickName;
     }
 
     public Dog() {
@@ -31,6 +32,6 @@ public class Dog extends Animals implements IBarkable {
 
     @Override
     public void bark() {
-
+        System.out.println("Bark");
     }
 }
