@@ -29,12 +29,12 @@ public class EmployeesAppl {
         Employee[] emps = new Employee[]{manager01, manager02, manager03, salesMan01, salesMan02, salesMan03, wageEmployee01, wageEmployee02, wageEmployee03};
         printAllEmployees(emps);
 
-        System.out.println(getSumSalaryAllEmployees(emps));
+        double salaryAllEmployees = getSumSalaryAllEmployees(emps);
 
         double salary = 2500.0;
         printEmpsWithSalaryMoreThan(emps, salary);
 
-        System.out.println(getСompanyRevenue(emps));
+        double companyRevenue = getСompanyRevenue(emps);
     }
 
 
