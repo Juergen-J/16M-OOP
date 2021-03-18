@@ -17,28 +17,28 @@ public class CarAppl {
                 new Car(1956, "01-Arrera", "Grey", 250.0, 825_000.0),
                 new Car(1994, "Mozarrera", "Purple", 180.0, 25_000.0),
                 new Car(2000, "Arrera", "Red", 700.0, 255_000.0),
-                new Car(2010, "Irrera", "Pink", 400.0, 5_000.0),
+                new Car(2010, "Irrera", "Pink", 400.0, 5_000.0)
         };
 //A
         display(cars);
 
-        Arrays.sort(cars);
-        display(cars);
+//        Arrays.sort(cars);
+//        display(cars);
 //B
-        Arrays.sort(cars, new ComparatorByColour());
-        display(cars);
-
-        Arrays.sort(cars,new ComparatorByEngine());
-        display(cars);
-
-        Arrays.sort(cars,new ComparatorByPrice());
-        display(cars);
-
+//        Arrays.sort(cars, new ComparatorByColour());
+//        display(cars);
+//
+//        Arrays.sort(cars,new ComparatorByEngine());
+//        display(cars);
+//
+//        Arrays.sort(cars,new ComparatorByPrice());
+//        display(cars);
+//
         Arrays.sort(cars,new ComparatorByYear());
         display(cars);
-
-        Arrays.sort(cars,new ComparatorByYearAndPrice());
-        display(cars);
+//
+//        Arrays.sort(cars,new ComparatorByYearAndPrice());
+//        display(cars);
 
     }
 
