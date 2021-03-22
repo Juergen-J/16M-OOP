@@ -4,24 +4,24 @@ import homework19.data.MyString;
 
 import java.util.Iterator;
 
-public class MySrtingIterator implements Iterator<Integer> {
-    private MyString range;
-    private int position;
+public class MySrtingIterator implements Iterator<Character> {
+    private MyString str;
+    private int curPos;
+    private int size;
 
-    public MySrtingIterator(MyString range) {
-        this.range = range;
-        position = range.getMin();
+    public MySrtingIterator(MyString str) {
+        this.str = str;
+        curPos = 0;
+        size = str.getLengthArray();
     }
 
     @Override
     public boolean hasNext() {
-        if (position <= range.getMax())
-            return true;
-        return false;
+        return curPos < size;
     }
 
     @Override
-    public Integer next() {
-        return position++;
+    public Character next() {
+        return str.getArray()[curPos++];
     }
 }

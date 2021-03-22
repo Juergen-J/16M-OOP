@@ -1,21 +1,19 @@
 package homework19.data;
 
-import homework19.iterators.MyStringReverseIterator;
+import homework19.iterators.*;
 
+
+import java.util.Arrays;
 import java.util.Iterator;
 
-public class MyString implements Iterable<Integer>{
+public class MyString implements Iterable<Character> {
     private char[] array;
-    private int min;
-    private int max;
 
     public MyString(String str) {
-        this.array = str.toCharArray();
-    }
-
-    public MyString(int min, int max) {
-        this.min = min;
-        this.max = max;
+        if (str == null || str.trim().isEmpty())
+            this.array = new char[0];
+        else
+            this.array = str.toCharArray();
     }
 
     public int getLengthArray() {
@@ -25,31 +23,12 @@ public class MyString implements Iterable<Integer>{
     public char[] getArray() {
         return array;
     }
-    public int getMin() {
-        return min;
-    }
 
-    public void setMin(int min) {
-        if (min <= max)
-            this.min = min;
-        else
-            System.out.println("Error");
-    }
-
-    public int getMax() {
-        return max;
-    }
-
-    public void setMax(int max) {
-        if (max >= min)
-            this.max = max;
-        else
-            System.out.println("Error");
-    }
 
     @Override
-    public Iterator<Integer> iterator() {
-//        return new RangeIterator(this);
-        return new MyStringReverseIterator(this);
+    public Iterator<Character> iterator() {
+        return new MySrtingIterator(this);
+//        return new MyStringReverseIterator(this);
     }
+
 }

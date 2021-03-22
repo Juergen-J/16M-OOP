@@ -5,24 +5,24 @@ import homework19.data.MyString;
 
 import java.util.Iterator;
 
-public class MyStringReverseIterator implements Iterator<Integer> {
-    private MyString range;
-    private int position;
+public class MyStringReverseIterator implements Iterator<Character> {
+    private MyString str;
+    private int curPos;
+    private int end;
 
-    public MyStringReverseIterator(MyString range) {
-        this.range = range;
-        position = range.getMax();
+    public MyStringReverseIterator(MyString str) {
+        this.str = str;
+        curPos = str.getLengthArray() - 1;
+        end = 0;
     }
 
     @Override
     public boolean hasNext() {
-        if (position >= range.getMin())
-            return true;
-        return false;
+        return curPos >=end;
     }
 
     @Override
-    public Integer next() {
-        return position--;
+    public Character next() {
+        return str.getArray()[curPos--];
     }
 }
