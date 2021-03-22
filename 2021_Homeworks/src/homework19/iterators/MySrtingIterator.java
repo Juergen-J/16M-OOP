@@ -1,12 +1,14 @@
-package homework19;
+package homework19.iterators;
+
+import homework19.data.MyString;
 
 import java.util.Iterator;
 
-public class RangeIterator implements Iterator<Integer> {
-    private Range range;
+public class MySrtingIterator implements Iterator<Integer> {
+    private MyString range;
     private int position;
 
-    public RangeIterator(Range range) {
+    public MySrtingIterator(MyString range) {
         this.range = range;
         position = range.getMin();
     }

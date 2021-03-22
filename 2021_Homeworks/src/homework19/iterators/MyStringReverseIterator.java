@@ -1,13 +1,15 @@
-package homework19;
+package homework19.iterators;
 
+
+import homework19.data.MyString;
 
 import java.util.Iterator;
 
-public class RangeReverseIterator implements Iterator<Integer> {
-    private Range range;
+public class MyStringReverseIterator implements Iterator<Integer> {
+    private MyString range;
     private int position;
 
-    public RangeReverseIterator(Range range) {
+    public MyStringReverseIterator(MyString range) {
         this.range = range;
         position = range.getMax();
     }
