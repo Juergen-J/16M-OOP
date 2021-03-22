@@ -26,4 +26,10 @@ public class MyStringIterator implements Iterator<Character> {
     public Character next() {
         return strB.charAt(curPos++);
     }
+
+    @Override
+    public void remove(){
+        strB.deleteCharAt(--curPos);
+        size--;
+    }
 }

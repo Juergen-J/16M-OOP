@@ -21,6 +21,9 @@ public class MyString implements Iterable<Character> {
         strB.deleteCharAt(index);
     }
 
+    public StringBuilder getStrB() {
+        return strB;
+    }
 
     @Override
     public String toString() {
