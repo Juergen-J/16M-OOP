@@ -3,6 +3,7 @@ package lesson21.model;
 import lesson21.intefaces.IList;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class MyArray implements IList {
     private static final int INITIAL_SIZE = 16;
@@ -70,26 +71,58 @@ public class MyArray implements IList {
 
     @Override
     public boolean remove(Object obj) {
+        if (obj == null)
+            return false;
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(obj)) {
+                remove(i);
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public int indexOf(Object obj) {
-        return 0;
+        if (obj == null)
+            return -1;
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(obj)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(Object obj) {
-        return 0;
+        if (obj == null)
+            return -1;
+        int index = size;
+        while (index >= 0) {
+            if (array[index]==obj)
+                return index;
+            index--;
+        }
+        return -1;
     }
 
     @Override
     public boolean contains(Object obj) {
+        if (obj == null)
+            return false;
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(obj)) {
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        Object[] result = new Object[size];
+        System.arraycopy(array, 0, result, 0, size);
+        return result;
     }
 }

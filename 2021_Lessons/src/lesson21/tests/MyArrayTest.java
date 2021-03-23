@@ -53,5 +53,65 @@ public class MyArrayTest {
 
     }
 
+    @Test
+    public void testRemoveObject() {
+        assertEquals(false, numbers.remove(null));
+        Integer temp = 10;
+        assertEquals(true, numbers.remove(temp));
+        assertEquals(6, numbers.size());
+        assertEquals(true, numbers.remove(temp));
+        assertEquals(5, numbers.size());
+        assertEquals(false, numbers.remove(temp));
+
+        assertEquals(false, strings.remove(null));
+        String tempStr = "abc";
+        assertEquals(true, strings.remove(tempStr));
+        assertEquals(3, strings.size());
+        assertEquals(true, strings.remove("acb"));
+        assertEquals(2, strings.size());
+        assertEquals(false, strings.remove(tempStr));
+    }
+
+    @Test
+    public void testIndexOf() {
+        assertEquals(-1, numbers.indexOf(null));
+        assertEquals(-1, numbers.indexOf(500));
+        assertEquals(0, numbers.indexOf(10));
+        assertEquals(1, strings.indexOf("lmn"));
+        assertEquals(-1, strings.indexOf("lmnp"));
+    }
+
+    @Test
+    public void testLastIndexOf() {
+        assertEquals(-1, numbers.lastIndexOf(null));
+        assertEquals(-1, numbers.lastIndexOf(500));
+        assertEquals(5, numbers.lastIndexOf(10));
+        assertEquals(1, strings.lastIndexOf("lmn"));
+        assertEquals(-1, strings.lastIndexOf("lmnp"));
+        assertEquals(3, strings.lastIndexOf("acb"));
+    }
+
+    @Test
+    public void testContains() {
+        assertEquals(false, numbers.contains(null));
+        assertEquals(false, numbers.contains(1000));
+        assertEquals(true, numbers.contains(10));
+        assertEquals(true, strings.contains("acb"));
+        assertEquals(false, strings.contains(null));
+    }
+
+    @Test
+    public void testToArray() {
+        Integer[] arrNumbersTest = {10, 7, 11, -2, 13, 10, 2000};
+        String[] arrStringsTest = {"abc", "lmn", "fg", "acb"};
+        assertEquals(arrNumbersTest[0], numbers.toArray()[0]);
+        assertEquals(arrNumbersTest, numbers.toArray());
+        assertEquals(arrNumbersTest.length, numbers.toArray().length);
+        assertEquals(arrStringsTest[3], strings.toArray()[3]);
+        assertEquals(arrStringsTest, strings.toArray());
+        assertEquals(arrStringsTest.length, strings.toArray().length);
+
+
+    }
 
 }
