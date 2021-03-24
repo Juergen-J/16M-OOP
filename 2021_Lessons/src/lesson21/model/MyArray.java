@@ -98,9 +98,9 @@ public class MyArray implements IList {
     public int lastIndexOf(Object obj) {
         if (obj == null)
             return -1;
-        int index = size;
+        int index = size - 1;
         while (index >= 0) {
-            if (array[index]==obj)
+            if (array[index].equals(obj))
                 return index;
             index--;
         }
