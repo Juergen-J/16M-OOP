@@ -110,8 +110,23 @@ public class MyArrayTest {
         assertEquals(arrStringsTest[3], strings.toArray()[3]);
         assertEquals(arrStringsTest, strings.toArray());
         assertEquals(arrStringsTest.length, strings.toArray().length);
+    }
 
+    @Test
+    public void testClear() {
+        numbers.clear();
+        assertEquals(0, numbers.size());
+        strings.clear();
+        assertEquals(0, strings.size());
+    }
 
+    @Test
+    public void testIterable() {
+        int count = 0;
+        for (Object o : numbers) {
+            assertEquals(arrNumbers[count++], o);
+        }
+        assertEquals(arrNumbers.length, count);
     }
 
 }

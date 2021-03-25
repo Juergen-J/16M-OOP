@@ -10,4 +10,5 @@ public interface IList {
     int lastIndexOf(Object obj);
     boolean contains(Object obj);
     Object[] toArray();
+    void clear();
 }

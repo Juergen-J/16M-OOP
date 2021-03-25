@@ -3,9 +3,10 @@ package lesson21.model;
 import lesson21.intefaces.IList;
 
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Objects;
 
-public class MyArray implements IList {
+public class MyArray implements IList, Iterable<Object> {
     private static final int INITIAL_SIZE = 16;
     private Object[] array;
     private int size = 0;
@@ -125,4 +126,18 @@ public class MyArray implements IList {
         System.arraycopy(array, 0, result, 0, size);
         return result;
     }
+
+    @Override
+    public void clear() {
+        for (int i = 0; i < size; i++) {
+            array[i] = null;
+        }
+        size = 0;
+    }
+
+    @Override
+    public Iterator<Object> iterator() {
+        return new MyArrayIterator(this);
+    }
+
 }
