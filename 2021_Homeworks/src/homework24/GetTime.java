@@ -77,37 +77,37 @@ public class GetTime {
         return (int) (Math.random() * (1000) + 1);
     }
 
-    static void addToBegin(List list) {
+    static void addToBegin(List<Integer> list) {
         for (int i = 0; i < 100000; i++) {
             list.add(0, getRandomNumber());
         }
     }
 
-    static void addToMiddle(List list) {
+    static void addToMiddle(List<Integer> list) {
         for (int i = 0; i < 100000; i++) {
             list.add(list.size() / 2, getRandomNumber());
         }
     }
 
-    static void addToEnd(List list) {
+    static void addToEnd(List<Integer> list) {
         for (int i = 0; i < 100000; i++) {
             list.add(getRandomNumber());
         }
     }
 
-    static void deleteFromBegin(List list) {
+    static void deleteFromBegin(List<Integer> list) {
         for (int i = 0; i < 100000; i++) {
             list.remove(0);
         }
     }
 
-    static void deleteFromMiddle(List list) {
+    static void deleteFromMiddle(List<Integer> list) {
         for (int i = 0; i < 100000; i++) {
             list.remove(list.size() / 2);
         }
     }
 
-    static void deleteFromEnd(List list) {
+    static void deleteFromEnd(List<Integer> list) {
         for (int i = 0; i < 100000; i++) {
             list.remove(list.size() - 1);
         }
