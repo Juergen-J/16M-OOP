@@ -7,7 +7,6 @@ public class MyLinkedList implements IList {
     private Node last;
     private int size;
 
-
     @Override
     public boolean add(Object obj) {
         Node newNode = new Node(last, obj, null);
@@ -69,7 +68,11 @@ public class MyLinkedList implements IList {
 
     @Override
     public boolean remove(Object obj) {
-        return false;
+        int index = indexOf(obj);
+        if (index < 0)
+            return false;
+        remove(index);
+        return true;
     }
 
     @Override
@@ -142,3 +145,4 @@ public class MyLinkedList implements IList {
 
     }
 }
+
