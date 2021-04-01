@@ -1,59 +1,65 @@
-package telran.dto;
+package lesson27.dto;
 
-public class Person {
+public abstract class Person implements Comparable<Person> {
 
-	String name;
-	long id;
-	int age;
+    String name;
+    long id;
+    int age;
 
-	public Person(String name, long id, int age) {
-		if (name != null)
-			this.name = name;
-		else
-			this.name = "Not defined";
-		setId(id);
-		setAge(age);
-	}
+    public Person(String name, long id, int age) {
+        if (name != null)
+            this.name = name;
+        else
+            this.name = "Not defined";
+        setId(id);
+        setAge(age);
+    }
 
-	public Person() {
-		this.name = "Not defined";
-	}
+    public Person() {
+        this.name = "Not defined";
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		if (name != null)
-			this.name = name;
-		else
-			System.out.println("Wrong name");
-	}
+    public void setName(String name) {
+        if (name != null)
+            this.name = name;
+        else
+            System.out.println("Wrong name");
+    }
 
-	public long getId() {
-		return id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setId(long id) {
-		if (id > 0)
-			this.id = id;
-		else
-			System.out.println("Wrong id");
-	}
+    public void setId(long id) {
+        if (id > 0)
+            this.id = id;
+        else
+            System.out.println("Wrong id");
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setAge(int age) {
-		if (age > 0 || age < 120)
-			this.age = age;
-		else
-			System.out.println("Wrong age");
-	}
+    public void setAge(int age) {
+        if (age > 0 || age < 120)
+            this.age = age;
+        else
+            System.out.println("Wrong age");
+    }
 
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", id=" + id + ", age=" + age + "]";
-	}
+    @Override
+    public String toString() {
+        return "Person [name=" + name + ", id=" + id + ", age=" + age + "]";
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        int res = name.compareTo(o.name);
+        return res != 0 ? res : Long.compare(id, o.id);
+    }
 }

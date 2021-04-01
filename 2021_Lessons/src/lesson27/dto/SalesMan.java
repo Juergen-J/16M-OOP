@@ -1,4 +1,4 @@
-package telran.dto;
+package lesson27.dto;
 
 public class SalesMan extends Employee {
 
