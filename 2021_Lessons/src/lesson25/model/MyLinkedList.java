@@ -2,7 +2,9 @@ package lesson25.model;
 
 import lesson25.interfaces.IList;
 
-public class MyLinkedList implements IList {
+import java.util.Iterator;
+
+public class MyLinkedList implements IList, Iterable<Object> {
     private Node first;
     private Node last;
     private int size;
@@ -17,6 +19,10 @@ public class MyLinkedList implements IList {
         last = newNode;
         size++;
         return true;
+    }
+
+    public Node getFirst() {
+        return first;
     }
 
     @Override
@@ -143,6 +149,11 @@ public class MyLinkedList implements IList {
     @Override
     public void clear() {
 
+    }
+
+    @Override
+    public Iterator<Object> iterator() {
+        return null;
     }
 }
 

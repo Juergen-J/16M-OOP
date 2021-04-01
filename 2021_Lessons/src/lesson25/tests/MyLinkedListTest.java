@@ -67,6 +67,7 @@ public class MyLinkedListTest {
     @Test
     public void testClear() {
         assertEquals(3, myLinkedList.size());
+
 //        myLinkedList.clear();
 //        assertEquals(0, myLinkedList.size());
     }

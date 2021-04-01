@@ -1,6 +1,6 @@
 package lesson25.interfaces;
 
-public interface IList {
+public interface IList{
     boolean add(Object obj);
     int size();
     Object get(int index);
