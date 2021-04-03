@@ -4,6 +4,7 @@ public abstract class Employee extends Person {
 
     String company;
     double baseSalary;
+    double totalSalary = 0.0;
 
     public Employee(String name, long id, int age, String company, double baseSalary) {
         super(name, id, age);
@@ -11,7 +12,7 @@ public abstract class Employee extends Person {
             this.company = company;
         else
             this.company = "Not defined";
-        setBaseSalary(baseSalary);
+        this.baseSalary = baseSalary;
     }
 
     public Employee() {
@@ -34,10 +35,18 @@ public abstract class Employee extends Person {
     }
 
     public void setBaseSalary(double baseSalary) {
-//        if (baseSalary > 0)
+        if (baseSalary > 0)
             this.baseSalary = baseSalary;
-//        else
-//            System.out.println("Wrong base salary");
+        else
+            System.out.println("Wrong base salary");
+    }
+
+    public double getTotalSalary() {
+        return totalSalary;
+    }
+
+    public void setTotalSalary(double totalSalary) {
+        this.totalSalary = totalSalary;
     }
 
     @Override

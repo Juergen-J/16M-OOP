@@ -3,6 +3,8 @@ package lesson27.appl;
 import lesson27.dto.*;
 import lesson27.model.Company;
 
+import java.util.Arrays;
+
 public class CompanyAppl {
     public static void main(String[] args) {
         Employee m1 = new Manager("Ivanov", 1000, 23, "H&M", 1500, 3);
@@ -16,7 +18,18 @@ public class CompanyAppl {
         Employee we3 = new WageEmployee("Permyakov", 1222, 38, "H&M", 0, 39, 14.9);
         Employee[] emps = new Employee[]{m1, m2, m3, sm1, sm2, sm3, we1, we2, we3};
 
-        Company company = new Company("Company", "Address");
-                System.out.println(company);
+        Company company = new Company("Horns and hooves", "Shadow village, Street 13");
+        filCompany(company, emps);
+
+        System.out.println(company);
+
     }
+
+    private static void filCompany(Company company, Employee[] emps) {
+        for (int i = 0; i < emps.length; i++) {
+            company.hireEmployee(emps[i]);
+        }
+    }
+
+
 }

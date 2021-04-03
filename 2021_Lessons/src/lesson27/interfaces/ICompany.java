@@ -9,8 +9,6 @@ public interface ICompany {
 
     Employee fireEmployee(long id);
 
-    Employee setEmployeeSalary(long id, double salary);
-
     double getCompanyProfit();
 
     double getCompanyExpenses();

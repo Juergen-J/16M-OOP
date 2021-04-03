@@ -1,8 +1,10 @@
 package lesson27.model;
 
 import lesson27.dto.Employee;
+import lesson27.dto.SalesMan;
 import lesson27.interfaces.ICompany;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -37,16 +39,16 @@ public class Company implements ICompany {
     @Override
     public String toString() {
         int count = 1;
-        String str = "Company name: " + name + "/n" + "Company address: " + address;
+        String str = "Company name: " + name + "\n" + "Company address: " + address + "\n";
         for (Employee e : emps) {
             str += "==================" + count + "===============\n";
             str += "Company: " + e.getCompany() + "\n";
             str += "Employee id: " + e.getId() + "\n";
             str += "Name: " + e.getName() + "\n";
-            str += "Salary: " + e.getBaseSalary() + "\n";
+            str += "Salary: " + e.getTotalSalary() + "\n";
             count++;
         }
-        return "";
+        return str;
     }
 
     @Override
@@ -67,23 +69,28 @@ public class Company implements ICompany {
     }
 
     @Override
-    public Employee setEmployeeSalary(long id, double salary) {
-        return null;
-    }
-
-    @Override
     public double getCompanyProfit() {
-        return 0;
+        double output = 0.0;
+        for (Employee e : emps) {
+            if (e instanceof SalesMan) {
+                output += ((SalesMan) e).getTotalSales();
+            }
+        }
+        return output;
     }
 
     @Override
     public double getCompanyExpenses() {
-        return 0;
+        double output = 0.0;
+        for (Employee e : emps) {
+            output += e.getTotalSalary();
+        }
+        return output;
     }
 
     @Override
     public int numberOfEmployees() {
-        return 0;
+        return emps.size();
     }
 
     @Override
@@ -97,11 +104,20 @@ public class Company implements ICompany {
 
     @Override
     public List<Employee> getEmployeesWithSalary(double start, double finish) {
-        return null;
+        List<Employee> result = new LinkedList<>();
+        for (Employee e : emps) {
+            if (e.getTotalSalary() > start && e.getTotalSalary() < finish)
+                result.add(e);
+        }
+        return result;
     }
 
     @Override
     public List<Employee> getFiredEmployees() {
-        return null;
+        List<Employee> result = new LinkedList<>();
+        for (Employee e : firedEmps) {
+            result.add(e);
+        }
+        return result;
     }
 }

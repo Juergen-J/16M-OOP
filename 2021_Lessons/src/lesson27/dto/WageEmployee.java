@@ -9,6 +9,7 @@ public class WageEmployee extends Employee {
         super(name, id, age, company, baseSalary);
         setHours(hours);
         setWage(wage);
+        totalSalary = hours * wage;
     }
 
     public WageEmployee() {
