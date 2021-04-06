@@ -1,15 +1,13 @@
-package lesson27.dto;
+package homework28.dto;
 
 public class WageEmployee extends Employee {
-
     int hours;
     double wage;
 
     public WageEmployee(String name, long id, int age, String company, double baseSalary, int hours, double wage) {
         super(name, id, age, company, baseSalary);
-        setHours(hours);
-        setWage(wage);
-        totalSalary = hours * wage;
+        this.hours = hours;
+        this.wage = wage;
     }
 
     public WageEmployee() {
@@ -20,10 +18,7 @@ public class WageEmployee extends Employee {
     }
 
     public void setHours(int hours) {
-        if (hours > 0)
-            this.hours = hours;
-        else
-            System.out.println("Wrong hours");
+        this.hours = hours;
     }
 
     public double getWage() {
@@ -31,19 +26,19 @@ public class WageEmployee extends Employee {
     }
 
     public void setWage(double wage) {
-        if (wage > 0)
-            this.wage = wage;
-        else
-            System.out.println("Wrong wage");
+        this.wage = wage;
     }
-
 
     @Override
     public String toString() {
-        return "WageEmployee [company=" + company + ", baseSalary=" + baseSalary + ", name=" + name + ", id=" + id
-                + ", age=" + age + ", hours=" + hours + ", wage=" + wage + "]";
+        return "WageEmployee{" +
+                "hours=" + hours +
+                ", wage=" + wage +
+                '}';
     }
 
-
+    @Override
+    public double calcSalary() {
+        return hours * wage;
+    }
 }
-
