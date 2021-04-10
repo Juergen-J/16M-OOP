@@ -41,4 +41,5 @@ public class SalesMan extends Employee {
     public double calcSalary() {
         return baseSalary + totalSales * bonus / 100;
     }
+
 }
